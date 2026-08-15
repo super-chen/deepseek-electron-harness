@@ -1,74 +1,46 @@
-# DeepSeek Harness
+# DeepElectron Harness (DE-Harness)
 
 [English](README.md) | 中文
 
-DeepSeek Harness（`dsh`）是由 [DeepSeek AI](https://deepseek.com) 开发的开源 agent harness（智能体框架）。
+**DeepElectron Harness**（`de-harness`）是 [DeepSeek Harness (`dsh`)](https://github.com/deepseek-ai/deepseek-harness) 的 GUI 桌面化实现。
 
-它采用**一切皆插件**的架构，并由 [Cordis](https://github.com/cordiverse/cordis) 驱动，其设计参见论文 [_A Programming Paradigm for Spatiotemporal Composability_](https://github.com/cordiverse/paper)。
+我们通过 Electron 框架将原生的 CLI / 脚本化工具改造为开箱即用、跨平台的桌面端软件。它保留了原项目由 [Cordis](https://github.com/cordiverse/cordis) 驱动的**一切皆插件**架构，同时赋予其直观的现代图形界面与本地原生体验。
 
-## 开发者预览
+---
 
-DeepSeek Harness 目前处于 _开发者预览_ 阶段，正在快速迭代。**未来将出现破坏兼容性的变更。**
+## ✨ 桌面化特性
 
-## 运行
+- 🖥️ **图形化控制台**：告别命令行，提供开箱即用的 GUI 界面，轻松配置参数与调度 Agent。
+- 📦 **跨平台原生支持**：基于 Electron 构建，完整适配 macOS、Windows 和 Linux。
+- 🔒 **本地安全存储**：API Key 及敏感配置均在本地加密存储，网络请求与数据完全掌握在自己手中。
+- 👁️ **过程可视化**：清晰展现模型思考过程（Chain-of-Thought）、工具调用（Function Calling）步骤及上下文状态。
+- ⚡ **系统级深度集成**：支持系统托盘常驻、快捷键唤醒、文件拖拽解析与本地桌面通知。
 
-### 通过 `npm` 运行
+---
 
-安装 `Node.js`，然后运行：
+## 🚀 快速开始
+
+### 下载安装包（适合普通用户）
+
+前往项目的 [Releases](../../releases) 页面，下载对应操作系统的最新安装包：
+
+- **macOS**: `.dmg` / `.zip` (支持 Apple Silicon 及 Intel 芯片)
+- **Windows**: `.exe` 安装包 / 便携版
+- **Linux**: `.AppImage` / `.deb` 包
+
+---
+
+## 🛠️ 从源码开发与构建
+
+适合希望自行从源码编译或进行二次开发的开发者。
+
+### 环境要求
+
+- [Node.js](https://nodejs.org/) `>= 18.0.0`
+- [pnpm](https://pnpm.io/) `>= 8.0.0`
+
+### 1. 克隆仓库
 
 ```sh
-npx @deepseek-ai/dsh web
-```
-
-该命令会启动 Web UI，默认地址为 `http://127.0.0.1:3080`。详见 [Web UI 指南](docs/user/guide/index.md)。
-
-### 从源码运行
-
-如需从仓库源码运行：
-
-```sh
-git clone https://github.com/deepseek-ai/deepseek-harness.git
-cd deepseek-harness
-pnpm install
-pnpm run build
-pnpm dsh web
-```
-
-## 社区与支持
-
-- 欢迎通过 [GitHub Discussions](https://github.com/deepseek-ai/deepseek-harness/discussions) 提交反馈或 bug 报告。
-- 为你的插件仓库添加 [`dsh-plugin`](https://github.com/topics/dsh-plugin) 话题，便于被发现。
-- 欢迎加入 DeepSeek Harness 企微群：扫码添加企微小助手并填写入群问卷，完成后小助手会邀请你入群。
-
-<table>
-  <thead>
-    <tr>
-      <th align="center">企微小助手</th>
-      <th align="center">入群问卷</th>
-      <th align="center">微信公众号</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center"><img src="assets/community-wecom-assistant.png" alt="DeepSeek Harness 企微小助手二维码" width="180" height="180"></td>
-      <td align="center"><a href="https://trtgsjkv6r.feishu.cn/share/base/form/shrcnIt5twSVdLGD52KJBckGCgg"><img src="assets/community-wecom-survey.png" alt="DeepSeek Harness 入群问卷二维码" width="180" height="180"></a></td>
-      <td align="center"><img src="assets/community-wechat-official-account.png" alt="DeepSeek Harness 团队微信公众号二维码" width="180" height="180"></td>
-    </tr>
-  </tbody>
-</table>
-
-## 参与贡献
-
-参见 [CONTRIBUTING.md](CONTRIBUTING.md)。
-
-## 开发
-
-请先阅读[开发指南](docs/development.md)与[架构文档](docs/architecture.md)。
-
-面向 agent：请遵循 [AGENTS.md](AGENTS.md)。
-
-## 许可证
-
-[MIT](LICENSE)
-
-第三方依赖及其许可证见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+git clone [https://github.com/your-username/deepseek-electron-harness.git](https://github.com/your-username/deepseek-electron-harness.git)
+cd deepseek-electron-harness
